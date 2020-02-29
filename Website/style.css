@@ -1,0 +1,113 @@
+body {
+  background-color: white;
+  font-family: "Helvetica", "Ariel", "Times New Roman";
+}
+
+nav {
+  background-color: moccasin;
+  width: 100%;
+  padding: 20px;
+  letter-spacing: 0.05em;
+}
+
+nav a {
+  color: black;
+  font-weight: bold;
+}
+
+.caret {
+  color: red;
+  position: absolute;
+    top: calc(50% - 1px);
+    right: -30px;
+}
+
+
+h1 {
+  color: navy;
+  left: 58px;
+  font-size: 6px;
+  letter-spacing: .05em;
+  font-family: "Helvetica";
+  position: relative;
+}
+
+h2 {
+  color: navy;
+  left: 68px;
+  font-size: 12px;
+  font-family: "Helvetica";
+  letter-spacing: .05em;
+  position: relative;
+  
+}
+
+
+h4 {
+  color: navy;
+  left: 55px;
+  font-family: "Helvetica";
+  font-size: 16px;
+
+}
+
+#home-main-section {
+  height: 100px;
+  position: relative;
+ 
+}
+
+.main-heading {
+  color: navy;
+  position: absolute;
+  font-family: "Helvetica";
+  letter-spacing: 0.05em;
+  margin: 0;
+  top: 50%;
+  padding-left: 5px;
+  font-size: 16px;
+   
+}
+
+#components {
+  color: navy;
+  position: relative;
+  left: 55px;
+  top: 75px;
+
+}
+
+
+
+#browser-info-container {
+  height: 600px;
+  position: relative;
+}
+
+#browser-info {
+  position: absolute;
+  left: 55px;
+  top: 45px;
+  padding-left: 5px;
+}
+
+#navigator {
+  color: navy;
+}
+
+#screen {
+  color: navy;
+}
+
+#window {
+  color: navy;
+} 
+
+input {
+  position: relative;
+  left: 57px;
+  top: 50px;
+}
+
+
+

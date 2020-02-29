@@ -1,0 +1,28 @@
+#browserNavigator {
+    color: navy;
+    position: relative;
+    left: 55px;
+    top: 75px;
+  }
+  
+  #browserScreen {
+    color: navy;
+    position: relative;
+    left: 55px;
+    top: 75px;
+  }
+  
+  #browserWindow {
+    color: navy;
+    position: relative;
+    left: 55px;
+    top: 75px;
+  } 
+
+  h4 {
+    color: navy;
+    position: relative;
+    left: 55px;
+    top: 75px;
+    font-family: "Helvetica Neue";
+  }

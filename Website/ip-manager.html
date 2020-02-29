@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> IP-Address Manager </title>
+    <link rel="stylesheet" href="ip-style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container-fullwidth">
+    
+        <h1>IP-Address Manager</h1>
+
+        <form id="ip-form">
+
+            <!--Select IP section-->
+            <div id="version">
+                <span class="label">Select IP Version</span>
+                    <div class = "select-option">
+                        <p>IPv4:</p>
+                        <input type="radio" name="select-ip-version" value="IPv4">
+                        <div class="space"></div>
+                        <p>IPv6:</p>
+                        <input type="radio" name="select-ip-version" value="IPv6">
+                     </div>
+            </div>
+
+            <!--IPv4 section-->
+            <div id="address-scheme">
+                <span class="label">Select IP Scheme</span>
+                    <div class="select-option">
+                    <p>Classfull:</p> 
+                    <input type="radio" name="select-ip-scheme" value="classfull" >
+                    <div class="space"></div>
+                    <p>Classless:</p>
+                    <input type="radio" name="select-ip-scheme" value="classless" >
+                </div>
+            </div>
+
+            <!--IPv4 Classless section-->
+            <div id="classless">
+
+                <span class="label"> IPv4 Classless Addressing </span>
+                <input style="margin-top: 10px" type="text" class="ip-oct" id="first-oct"> .
+                <input type="text" class="ip-oct" id="second-oct"> .
+                <input type="text" class="ip-oct" id="third-oct"> .
+                <input type="text" class="ip-oct" id="fourth-oct"> /
+                <input type="text" class="ip-oct" id="cidr-size">
+                <button id="calculate-button">Calculate</button>
+
+                <div style="text-align: left">
+                    <br>
+                    <div class="out-result">
+                        <span class="sub-label">IP Address:</span>
+                        <span class="display" id="ip"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet mask:</span>
+                        <span class="display" id="mask"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Net Address:</span>
+                        <span class="display" id="net"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Broadcast Address:</span>
+                        <span class="display" id="bc"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Standard Class:</span>
+                        <span class="display" id="sClass"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Range:</span>
+                        <span class="display" id="range"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">IP Binary:</span>
+                        <span class="display" id="binIp"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Mask Binary:</span>
+                        <span class="display" id="binMask"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Net Address Binary:</span>
+                        <span class="display" id="binNet"></span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">BC Address Binary:</span>
+                        <span class="display" id="binBc"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!--IPv4 classfull section-->
+            <div id="classfull">
+                <span class="label">Select Network Class</span>
+                <div class="select-option" style="text-align: center">
+                    <!-- <p style="padding: 0px 5px 0px 0px">Network Class:</p> -->
+                    <div class="space"></div>
+                    <p>A:</p>
+                    <input type="radio" value="class-a" name="select-network-class">
+                    <div class="space"></div>
+
+                    <p>B:</p>
+                    <input type="radio" value="class-b" name="select-network-class">
+                    <div class="space"></div>
+
+                    <p>C:</p>
+                    <input type="radio" value="class-c" name="select-network-class">
+                    <div class="space"></div>
+
+                    <p>D:</p>
+                    <input type="radio" value="class-d" name="select-network-class">
+                    <div class="space"></div>
+
+                    <p>E:</p>
+                    <input type="radio" value="class-e" name="select-network-class">
+                    <div class="space"></div>
+                </div>
+        
+
+                <div id="class-a" style="text-align: left">
+                    <div class="out-result">
+                        <span class="sub-label">First Octet Range:</span>
+                        <span class="display"> 1 - 126 </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">IP Address:</span>
+                        <span>
+                            <input type="text" value="10.0.0.1">
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hex IP Address:</span>
+                        <span>
+                            <span class="display" > 0A.00.00.01 </span>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                            <span class="sub-label">IP Addresses:</span>
+                            <span>
+                                <span> <input type="number" value="1"> </span>
+                            </span>
+                    </div>
+
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Mask:</span>
+                        <span>
+                            <select>
+                                <option value="0">255.0.0.0</option>
+                                <option value="1">255.128.0.0</option>
+                                <option value="2">255.192.0.0</option>
+                                <option value="3">255.224.0.0</option>
+                                <option value="4">255.240.0.0</option>
+                                <option value="5">255.248.0.0</option>
+                                <option value="6">255.252.0.0</option>
+                                <option value="7">255.254.0.0</option>
+                                <option value="8">255.255.0.0</option>
+                                <option value="9">255.255.128.0</option>
+                                <option value="10">255.255.192.0</option>
+                                <option value="11">255.255.224.0</option>
+                                <option value="12">255.255.240.0</option>
+                                <option value="13">255.255.248.0</option>
+                                <option value="14">255.255.252.0</option>
+                                <option value="15">255.255.254.0</option>
+                                <option value="16">255.255.255.0</option>
+                                <option value="17">255.255.255.128</option>
+                                <option value="18">255.255.255.192</option>
+                                <option value="19">255.255.255.224</option>
+                                <option value="20">255.255.255.240</option>
+                                <option value="21">255.255.255.248</option>
+                                <option value="22">255.255.255.252</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Mask Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">8</option>
+                                <option value="1">9</option>
+                                <option value="2">10</option>
+                                <option value="3">11</option>
+                                <option value="4">12</option>
+                                <option value="5">13</option>
+                                <option value="6">14</option>
+                                <option value="7">15</option>
+                                <option value="8">16</option>
+                                <option value="9">17</option>
+                                <option value="10">18</option>
+                                <option value="11">19</option>
+                                <option value="12">20</option>
+                                <option value="13">21</option>
+                                <option value="14">22</option>
+                                <option value="15">23</option>
+                                <option value="16">24</option>
+                                <option value="17">25</option>
+                                <option value="18">26</option>
+                                <option value="19">27</option>
+                                <option value="20">28</option>
+                                <option value="21">29</option>
+                                <option value="22">30</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Maximum Subnets:</span>
+                        <span>
+                            <select>
+                                <option value="1">2</option>
+                                <option value="2">4</option>
+                                <option value="3">8</option>
+                                <option value="4">16</option>
+                                <option value="5">32</option>
+                                <option value="6">64</option>
+                                <option value="7">128</option>
+                                <option value="8">256</option>
+                                <option value="9">512</option>
+                                <option value="10">1024</option>
+                                <option value="11">2048</option>
+                                <option value="12">4096</option>
+                                <option value="13">8192</option>
+                                <option value="14">16384</option>
+                                <option value="15">32768</option>
+                                <option value="16">65536</option>
+                                <option value="17">131072</option>
+                                <option value="18">262144</option>
+                                <option value="19">524288</option>
+                                <option value="20">1048576</option>
+                                <option value="21">2097152</option>
+                                <option value="22">4194304</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hosts Per Subnet:</span>
+                        <span>
+                            <select>
+                                <option value="0">16777214</option>
+                                <option value="1">8388606</option>
+                                <option value="2">4194302</option>
+                                <option value="3">2097150</option>
+                                <option value="4">1048574</option>
+                                <option value="5">524286</option>
+                                <option value="6">262142</option>
+                                <option value="7">131070</option>
+                                <option value="8">65534</option>
+                                <option value="9">32766</option>
+                                <option value="10">16382</option>
+                                <option value="11">8190</option>
+                                <option value="12">4094</option>
+                                <option value="13">2046</option>
+                                <option value="14">1022</option>
+                                <option value="15">510</option>
+                                <option value="16">254</option>
+                                <option value="17">126</option>
+                                <option value="18">62</option>
+                                <option value="19">30</option>
+                                <option value="20">14</option>
+                                <option value="21">6</option>
+                                <option value="22">2</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Host Address Range:</span>
+                        <span class="display" >10.0.0.1 - 10.255.255.254</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet ID:</span>
+                        <span class="display" >10.0.0.0</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Broadcast Address:</span>
+                        <span class="display" >10.255.255.255</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bitmap:</span>
+                        <span class="display" >0nnnnnnn.hhhhhhhh.hhhhhhhh.hhhhhhhh</span>
+                    </div>
+
+                </div>
+
+                <div id="class-b" style="text-align: left">
+                    <div class="out-result">
+                        <span class="sub-label">First Octet Range:</span>
+                        <span class="display"> 128 - 191 </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">IP Address:</span>
+                        <span>
+                            <input type="text" value="172.16.0.1">
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hex IP Address:</span>
+                        <span>
+                            <span class="display"> AC.10.00.01 </span>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                            <span class="sub-label">IP Addresses:</span>
+                            <span>
+                                <span> <input type="number" value="1"> </span>
+                            </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Mask:</span>
+                        <span>
+                            <select>
+                                <option value="0">255.255.0.0</option>
+                                <option value="1">255.255.128.0</option>
+                                <option value="2">255.255.192.0</option>
+                                <option value="3">255.255.224.0</option>
+                                <option value="4">255.255.240.0</option>
+                                <option value="5">255.255.248.0</option>
+                                <option value="6">255.255.252.0</option>
+                                <option value="7">255.255.254.0</option>
+                                <option value="8">255.255.255.0</option>
+                                <option value="9">255.255.255.128</option>
+                                <option value="10">255.255.255.192</option>
+                                <option value="11">255.255.255.224</option>
+                                <option value="12">255.255.255.240</option>
+                                <option value="13">255.255.255.248</option>
+                                <option value="14">255.255.255.252</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Mask Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">16</option>
+                                <option value="1">17</option>
+                                <option value="2">18</option>
+                                <option value="3">19</option>
+                                <option value="4">20</option>
+                                <option value="5">21</option>
+                                <option value="6">22</option>
+                                <option value="7">23</option>
+                                <option value="8">24</option>
+                                <option value="9">25</option>
+                                <option value="10">26</option>
+                                <option value="11">27</option>
+                                <option value="12">28</option>
+                                <option value="13">29</option>
+                                <option value="14">30</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Maximum Subnets:</span>
+                        <span>
+                            <select>
+                                <option value="0">1</option>
+                                <option value="1">2</option>
+                                <option value="2">4</option>
+                                <option value="3">8</option>
+                                <option value="4">16</option>
+                                <option value="5">32</option>
+                                <option value="6">64</option>
+                                <option value="7">128</option>
+                                <option value="8">256</option>
+                                <option value="9">512</option>
+                                <option value="10">1024</option>
+                                <option value="11">2048</option>
+                                <option value="12">4096</option>
+                                <option value="13">8192</option>
+                                <option value="14">16384</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hosts per Subnet:</span>
+                        <span>
+                            <select>
+                                <option value="0">65534</option>
+                                <option value="1">32766</option>
+                                <option value="2">16382</option>
+                                <option value="3">8190</option>
+                                <option value="4">4094</option>
+                                <option value="5">2046</option>
+                                <option value="6">1022</option>
+                                <option value="7">510</option>
+                                <option value="8">254</option>
+                                <option value="9">126</option>
+                                <option value="10">62</option>
+                                <option value="11">30</option>
+                                <option value="12">14</option>
+                                <option value="13">6</option>
+                                <option value="14">2</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Host Address Range:</span>
+                        <span class="display">172.16.0.1 - 172.16.255.254</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet ID:</span>
+                        <span class="display">172.16.0.0</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Broadcast Address:</span>
+                        <span class="display">172.16.255.255</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bitmap:</span>
+                        <span class="display">10nnnnnn.nnnnnnnn.hhhhhhhh.hhhhhhhh
+                        </span>
+                    </div>
+
+                </div>
+
+                <div id="class-c" style="text-align: left">
+                    <div class="out-result">
+                        <span class="sub-label">First Octet Range:</span>
+                        <span class="display"> 192 - 223 </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">IP Address:</span>
+                        <span>
+                            <input type="text" value="192.168.0.1">
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hex IP Address:</span>
+                        <span>
+                            <span class="display"> C0.A8.00.01 </span>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                            <span class="sub-label">IP Addresses:</span>
+                            <span>
+                                <span> <input type="number" value="1"> </span>
+                            </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Mask:</span>
+                        <span>
+                            <select>
+                                <option value="1">255.255.255.128</option>
+                                <option value="2">255.255.255.192</option>
+                                <option value="3">255.255.255.224</option>
+                                <option value="4">255.255.255.240</option>
+                                <option value="5">255.255.255.248</option>
+                                <option value="6">255.255.255.252</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Mask Bits:</span>
+                        <span>
+                            <select>
+                                <option value="0">24</option>
+                                <option value="1">25</option>
+                                <option value="2">26</option>
+                                <option value="3">27</option>
+                                <option value="4">28</option>
+                                <option value="5">29</option>
+                                <option value="6">30</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Maximum Subnets:</span>
+                        <span>
+                            <select>
+                                <option value="0">1</option>
+                                <option value="1">2</option>
+                                <option value="2">4</option>
+                                <option value="3">8</option>
+                                <option value="4">16</option>
+                                <option value="5">32</option>
+                                <option value="6">64</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Hosts per Subnet:</span>
+                        <span>
+                            <select>
+                                <option value="0">254</option>
+                                <option value="1">126</option>
+                                <option value="2">62</option>
+                                <option value="3">30</option>
+                                <option value="4">14</option>
+                                <option value="5">6</option>
+                                <option value="6">2</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Host Address Range:</span>
+                        <span class="display" >192.168.0.1 - 192.168.0.254</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet ID:</span>
+                        <span class="display">192.168.0.0</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Broadcast Address:</span>
+                        <span class="display">192.168.0.255</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Subnet Bitmap:</span>
+                        <span class="display">110nnnnn.nnnnnnnn.nnnnnnnn.hhhhhhhh
+                        </span>
+                    </div>
+
+                </div>
+
+                <div id="class-d" style="text-align: left">
+                       <h2 style="text-align: center"> Multicast </h2>
+                </div>
+
+                <div id="class-e" style="text-align: left">
+                        <h2 style="text-align: center"> Reserved </h2>
+                </div>
+
+            </div>
+            <!-- End Ipv4 section -->
+
+
+            <!-- IPv6 section -->
+            <div id="ipv6">
+                <div style="text-align: left">
+                    <hr>
+                    <div class="out-result">
+                        <span class="sub-label">IPv6 address:</span>
+                        <span> <input type="text" value="2001:db8::/32"> </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Compressed Address:</span>
+                        <span class="display" >2001:db8::/32</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Expanded Address:</span>
+                        <span class="display" >2001:0db8:0000:0000:0000:0000:0000:0000/32</span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Prefix:</span>
+                        <span class="display">ffff:ffff:0000:0000:0000:0000:0000:0000</span>
+                    </div>
+                    <div class="out-result">
+                            <span class="sub-label">IP Addresses:</span>
+                            <span>
+                                <span> <input type="number" value="1"> </span>
+                            </span>
+                    </div>
+                    <div class="out-result">
+                        <span class="sub-label">Range:</span>
+                        <span class="display">2001:db8:0:0:0:0:0:0-2001:db8:ffff:ffff:ffff:ffff:ffff:ffff</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="ip-script.js"></script>
+
+</body>
+
+</html>

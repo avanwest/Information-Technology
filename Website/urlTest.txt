@@ -1,0 +1,3 @@
+﻿https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax
+https://searchmicroservices.techtarget.com/definition/URI-Uniform-Resource-Identifier
+https://getbootstrap.com/docs/4.0/components/dropdowns/

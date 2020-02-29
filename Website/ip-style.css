@@ -1,0 +1,141 @@
+
+
+body {
+    font-family: Courier, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+  
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 0px auto;
+    background-color: #ffffff;
+}
+
+nav {
+    background-color: moccasin;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  nav a {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .caret {
+    color: red;
+    position: absolute;
+      top: calc(50% - 1px);
+      right: -25px;
+  }
+
+
+h1 {
+    font-family: Georgia;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 0px;
+}
+
+.space {
+    padding: 0px 20px 0px 0px;
+    display: inline-block
+    
+}
+
+.select-option p {
+    display: inline-block;
+}
+
+
+.label {
+    display: inline-block;
+    background: navy;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 24px;
+    color:moccasin;
+ 
+}
+
+.sub-label {
+    background: navy;
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+.ip-oct {
+    width: 45px;
+}
+
+.out-result {
+   
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray; 
+   
+}
+
+.out-result .sub-label {
+    display: inline-block;
+    width: 250px;
+    height: 25px;
+    color:white;
+    padding: 10px;
+    
+}
+
+input[type=radio] {
+    transform: scale(1.5);
+}
+
+
+
+#class-d {
+    background: khaki;
+    padding: 10px;
+}
+
+#class-e {
+    background: khaki;
+    padding: 10px;
+}
+
+
+input[type=text]{
+    height: 25px;
+    border-radius: 4px;
+}
+
+input[type=number]{
+    height: 25px;
+    border-radius: 4px;
+}
+
+select{
+    height: 25px;
+    border-radius: 4px;
+}
+
+#calculate-button{
+    height: 25px;
+    color: black;
+    border: 1px solid black;
+}
+
+.display{
+    color: black;
+    font-family: Courier;
+    background-color: white;
+    font-size: 16px;
+}
