@@ -1,6 +1,6 @@
-### Information Technology - CS355
+### Internet Technology - CS355
 
-##### Projects related to a course called Information Technology covering everything from the TCP/IP Model and internet addressing to routing, network technology and web development. The simple website includes three web tools: a browser information tool, a url analyzer, and an IP manager.
+##### Projects related to a course called Internet Technology covering everything from the TCP/IP Model and internet addressing to routing, network technology and web development. The simple website includes three web tools: a browser information tool, a url analyzer, and an IP manager.
 
 
 ![browser info](images/355_website.PNG)
